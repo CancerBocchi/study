@@ -1,0 +1,8 @@
+table_add ipv4_lpm set_nhop 22.1.11.29/32 => 00:00:22:01:11:29 1
+table_add ipv4_lpm set_nhop 22.1.12.29/32 => 00:00:22:01:11:30 2
+
+table_add t_handle_arp send_arp_reply 1 22.1.11.254 => 00:00:22:01:11:29
+table_add t_handle_arp send_arp_reply 1 22.1.12.254 => 00:00:22:01:11:30
+
+table_add t_handle_icmp send_icmp_reply 1 22.1.11.254 => 00:00:22:01:11:29
+table_add t_handle_icmp send_icmp_reply 2 22.1.12.254 => 00:00:22:01:11:30

@@ -1,0 +1,19 @@
+{
+    "target": "bmv2",
+    "p4info": "build/mac_forward.p4.p4info.txt",
+    "bmv2_json": "build/mac_forward.json",
+    "table_entries": [
+        {
+            "table": "MyIngress.mac_forward_table",
+            "match": { "hdr.ethernet.dstAddr": ["00:00:22:01:03:23"] },
+            "action_name": "MyIngress.forward",
+            "action_params": { "port": 1 }
+        },
+        {
+            "table": "MyIngress.mac_forward_table",
+            "match": { "hdr.ethernet.dstAddr": ["00:00:22:01:04:56"] },
+            "action_name": "MyIngress.forward",
+            "action_params": { "port": 2 }
+        }
+    ]
+}
